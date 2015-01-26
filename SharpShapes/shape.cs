@@ -33,6 +33,7 @@ namespace SharpShapes
         {
             FillColor = Color.Tomato;
             BorderColor = Color.Bisque;
+
         }
         /// <summary>
         /// Calculates the area of a shape.
