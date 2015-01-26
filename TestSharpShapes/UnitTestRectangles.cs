@@ -86,6 +86,7 @@ namespace TestSharpShapes
             Rectangle rectangle = new Rectangle(10, 15);
             rectangle.Scale(0);
         }
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void TestScaleRectangleToNegativePercent()
