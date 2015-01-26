@@ -27,7 +27,10 @@ namespace SharpShapes
         /// <summary>
         /// Counts the sides of a shape.
         /// </summary>
-        abstract public int SidesCount { get; }
+        abstract public int SidesCount 
+        { 
+            get; 
+        }
 
         public Shape()
         {
