@@ -10,7 +10,7 @@ namespace TestSharpShapes
         [TestMethod]
         public void TestSquareConstructor()
         {
-            Square rectangle = new Square(40);
+            Square square = new Square(40);
             Assert.AreEqual(40, square.Side);
         }
 
@@ -41,7 +41,7 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(150);
-            Assert.AreEqual((decimal)22.5, square.Height);
+            Assert.AreEqual((decimal)22.5, square.Side);
         }
 
         [TestMethod]
@@ -49,7 +49,7 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(100);
-            Assert.AreEqual(15, square.Height);
+            Assert.AreEqual(15, square.Side);
         }
 
         [TestMethod]
@@ -57,7 +57,7 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(37);
-            Assert.AreEqual((decimal)5.55, square.Height);
+            Assert.AreEqual((decimal)5.55, square.Side);
         }
 
         [TestMethod]
@@ -107,7 +107,7 @@ namespace TestSharpShapes
         [TestMethod]
         public void TestSquareColors()
         {
-            Square square = new Square(5);
+            Shape shape = new Square(5);
             Assert.AreEqual(System.Drawing.Color.Tomato, shape.FillColor);
             Assert.AreEqual(System.Drawing.Color.Bisque, shape.BorderColor);
         }
