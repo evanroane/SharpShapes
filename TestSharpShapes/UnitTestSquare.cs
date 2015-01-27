@@ -11,7 +11,8 @@ namespace TestSharpShapes
         public void TestSquareConstructor()
         {
             Square square = new Square(40);
-            Assert.AreEqual(40, square.Side);
+            Assert.AreEqual(40, square.Width);
+            Assert.AreEqual(40, square.Height);
         }
 
         [TestMethod]
@@ -33,7 +34,9 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(200);
-            Assert.AreEqual(30, square.Side);
+            Assert.AreEqual(30, square.Width);
+            Assert.AreEqual(30, square.Height);
+
         }
 
         [TestMethod]
@@ -41,7 +44,8 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(150);
-            Assert.AreEqual((decimal)22.5, square.Side);
+            Assert.AreEqual((decimal)22.5, square.Width);
+            Assert.AreEqual((decimal)22.5, square.Height);
         }
 
         [TestMethod]
@@ -49,7 +53,8 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(100);
-            Assert.AreEqual(15, square.Side);
+            Assert.AreEqual(15, square.Width);
+            Assert.AreEqual(15, square.Height);
         }
 
         [TestMethod]
@@ -57,7 +62,8 @@ namespace TestSharpShapes
         {
             Square square = new Square(15);
             square.Scale(37);
-            Assert.AreEqual((decimal)5.55, square.Side);
+            Assert.AreEqual((decimal)5.55, square.Width);
+            Assert.AreEqual((decimal)5.55, square.Height);
         }
 
         [TestMethod]
