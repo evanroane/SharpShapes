@@ -8,6 +8,6 @@ namespace SharpShapes
 {
     public class Square : Rectangle
     {
-        public Square(int side) : base(side, side){}
+        public Square(int edgeLength) : base(edgeLength, edgeLength){}
     }
 }
