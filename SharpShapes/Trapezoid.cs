@@ -6,7 +6,7 @@ using SharpShapes;
 
 namespace SharpShapes
 {
-    public class Trapezoid : Shape
+    public class Trapezoid : Quadrilateral
     {
         private decimal firstBase;
         public decimal FirstBase
@@ -50,9 +50,5 @@ namespace SharpShapes
             throw new NotImplementedException();
         }
 
-        public override int SidesCount
-        {
-            get { return 4; }
-        }
     }
 }
