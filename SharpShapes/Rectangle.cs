@@ -10,7 +10,7 @@ namespace SharpShapes
         private decimal width;
         public decimal Width 
         { 
-            get {return this.width; }
+            get { return this.width; }
         }
 
         private decimal height;
