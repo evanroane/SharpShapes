@@ -1,54 +1,59 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SharpShapes;
 
 namespace SharpShapes
 {
     public class Trapezoid : Quadrilateral
     {
-        private decimal firstBase;
-        public decimal FirstBase
-        {
-            get { return this.firstBase; }
-        }
-        private decimal secondBase;
-        public decimal SecondBase
-        {
-            get { return this.secondBase; }
-        }
-        private decimal altitude;
-        public decimal Altitude
-        {
-            get { return this.altitude; }
-        }
+        public decimal LongBase { get; private set; }
+        public decimal ShortBase { get; private set; }
+        public decimal Height { get; private set; }
+        public decimal ObtuseAngle { get; private set; }
+        public decimal AcuteAngle { get; private set; }
 
-        public Trapezoid(int firstBase, int secondBase, int altitude)
+        public Trapezoid(int longBase, int shortBase, int height)
         {
-            if (firstBase <= 0 || secondBase <= 0 || altitude <= 0)
+            if (height <= 0 || shortBase <= 0 || longBase <= 0 || shortBase >= longBase)
             {
                 throw new ArgumentException();
             }
-            this.firstBase = firstBase;
-            this.secondBase = secondBase;
-            this.altitude = altitude;
+            this.LongBase = longBase;
+            this.ShortBase = shortBase;
+            this.Height = height;
+
+            this.AcuteAngle = Decimal.Round((decimal)(Math.Atan((double)(height / WingLength())) * (180.0 / Math.PI)), 2);
+
+            this.ObtuseAngle = 180 - AcuteAngle;
+        }
+
+        private decimal WingLength()
+        {
+            return (LongBase - ShortBase) / 2;
         }
 
         public override void Scale(int percent)
         {
-            throw new NotImplementedException();
+            if (percent <= 0)
+            {
+                throw new ArgumentException();
+            }
+            this.LongBase = LongBase * percent / 100;
+            this.ShortBase = ShortBase * percent / 100;
+            this.Height = Height * percent / 100;
         }
 
         public override decimal Area()
         {
-            throw new NotImplementedException();
+            return (LongBase + ShortBase) / 2 * Height;
         }
 
         public override decimal Perimeter()
         {
-            throw new NotImplementedException();
+            double squares = (double)(WingLength() * WingLength() + Height * Height);
+            decimal legLength = Decimal.Round((decimal)Math.Sqrt(squares), 2);
+            return LongBase + ShortBase + 2 * legLength;
         }
-
     }
 }
