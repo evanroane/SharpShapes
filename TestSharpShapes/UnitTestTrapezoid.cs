@@ -179,8 +179,8 @@ namespace TestSharpShapes
         public void TestDefaultTrapezoidColors()
         {
             Trapezoid shape = new Trapezoid(20, 15, 2);
-            Assert.AreEqual(System.Drawing.Color.Bisque, shape.FillColor);
-            Assert.AreEqual(System.Drawing.Color.Tomato, shape.BorderColor);
+            Assert.AreEqual(System.Drawing.Color.Bisque, shape.BorderColor);
+            Assert.AreEqual(System.Drawing.Color.Tomato, shape.FillColor);
         }
     }
 }
